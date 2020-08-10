@@ -1,0 +1,128 @@
+[
+{
+  "model": "webapp.article",
+  "pk": 1,
+  "fields": {
+    "description": "Task45",
+    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
+    "type": 1,
+    "status": 1,
+    "publish_at": "2020-08-10T16:26:47Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 2,
+  "fields": {
+    "description": "Task4",
+    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
+    "type": 2,
+    "status": 2,
+    "publish_at": "2020-08-10T16:27:12Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 3,
+  "fields": {
+    "description": "Task5",
+    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
+    "type": 3,
+    "status": 3,
+    "publish_at": "2020-08-10T16:27:35Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 4,
+  "fields": {
+    "description": "ADSFDG",
+    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
+    "type": 1,
+    "status": 2,
+    "publish_at": "2020-08-10T16:27:42Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 5,
+  "fields": {
+    "description": "wdfghy",
+    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
+    "type": 2,
+    "status": 1,
+    "publish_at": "2020-08-10T16:27:55Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 6,
+  "fields": {
+    "description": "swdfgh",
+    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
+    "type": 1,
+    "status": 3,
+    "publish_at": "2020-08-10T16:28:55Z"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "type": "task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "type": "Bug"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "type": "Enhancement"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "status": "new"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "status": "In Progress"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "status": "Done"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$tXt24f4lYh8p$oSsfNe2wgzicKRpVGemkr9APNU3P4fk6/9qKyJzvgHU=",
+    "last_login": "2020-08-10T10:19:58.323Z",
+    "is_superuser": true,
+    "username": "Dar",
+    "first_name": "",
+    "last_name": "",
+    "email": "dar@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-08-10T10:19:34.494Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
