@@ -6,10 +6,8 @@ class Article(models.Model):
 
     description = models.CharField(max_length=2000, null=False, blank=False, verbose_name='Описание')
     maxdescription = models.TextField(max_length=2000,null=True,blank=False,verbose_name='Подробное описание')
-    type = models.ForeignKey('Type',related_name='type_key',
-                                on_delete=models.CASCADE, verbose_name='Тип')
-    status = models.ForeignKey('Status',related_name='status_key',
-                                on_delete=models.CASCADE, verbose_name='Статус')
+    types = models.ManyToManyField('webapp.Type',related_name='type_key', blank=True, verbose_name='Тип')
+    status = models.ForeignKey('Status',related_name='status_key',on_delete=models.CASCADE, verbose_name='Статус')
     publish_at = models.DateTimeField(verbose_name="Время публикации", blank=True, default=timezone.now)
 
 
@@ -24,11 +22,11 @@ class Article(models.Model):
 
 
 class Type(models.Model):
-    type = models.CharField(max_length = 30, default = 'task', verbose_name = 'Тип')
+    name = models.CharField(max_length = 30, default = 'task', verbose_name = 'Тип')
 
 
     def __str__(self):
-        return self.type
+        return self.name
 
     class Meta:
         verbose_name = 'Тип'
@@ -36,11 +34,11 @@ class Type(models.Model):
 
 
 class Status(models.Model):
-    status = models.CharField(max_length=30, default='new',verbose_name='Статус')
+    name = models.CharField(max_length=30, default='new',verbose_name='Статус')
 
 
     def __str__(self):
-        return self.status
+        return self.name
 
     class Meta:
         verbose_name = 'Статус'
