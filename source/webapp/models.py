@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MinLengthValidator
 
 
 class Article(models.Model):
 
-    description = models.CharField(max_length=2000, null=False, blank=False, verbose_name='Описание')
+    description = models.CharField(max_length=2000, null=False, blank=False, verbose_name='Описание',validators=[MinLengthValidator(5)])
     maxdescription = models.TextField(max_length=2000,null=True,blank=False,verbose_name='Подробное описание')
     types = models.ManyToManyField('webapp.Type',related_name='type_key', blank=True, verbose_name='Тип')
     status = models.ForeignKey('Status',related_name='status_key',on_delete=models.CASCADE, verbose_name='Статус')
