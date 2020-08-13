@@ -3,124 +3,172 @@
   "model": "webapp.article",
   "pk": 1,
   "fields": {
-    "description": "Task45",
-    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
-    "type": 1,
+    "description": "Task1",
+    "maxdescription": "blablablablablablablabla",
     "status": 1,
-    "publish_at": "2020-08-10T16:26:47Z"
+    "publish_at": "2020-08-13T11:47:57Z",
+    "types": [
+      1
+    ]
   }
 },
 {
   "model": "webapp.article",
   "pk": 2,
   "fields": {
-    "description": "Task4",
-    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
-    "type": 2,
+    "description": "task45",
+    "maxdescription": "English texts for beginners to practice reading and comprehension online and for free. Practicing your comprehension of written English will both improve your vocabulary and understanding of grammar and word order. The texts below are designed to help you develop while giving you an instant evaluation of your progress.",
     "status": 2,
-    "publish_at": "2020-08-10T16:27:12Z"
+    "publish_at": "2020-08-13T11:48:25Z",
+    "types": [
+      3
+    ]
   }
 },
 {
   "model": "webapp.article",
   "pk": 3,
   "fields": {
-    "description": "Task5",
-    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
-    "type": 3,
-    "status": 3,
-    "publish_at": "2020-08-10T16:27:35Z"
+    "description": "task3",
+    "maxdescription": "English texts for beginners to practice reading and comprehension online and for free. Practicing your comprehension of written English will both improve your vocabulary and understanding of grammar and word order. The texts below are designed to help you develop while giving you an instant evaluation of your progress.",
+    "status": 2,
+    "publish_at": "2020-08-13T11:49:01Z",
+    "types": [
+      2
+    ]
   }
 },
 {
   "model": "webapp.article",
   "pk": 4,
   "fields": {
-    "description": "ADSFDG",
-    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
-    "type": 1,
-    "status": 2,
-    "publish_at": "2020-08-10T16:27:42Z"
+    "description": "task55",
+    "maxdescription": "English texts for beginners to practice reading and comprehension online and for free. Practicing your comprehension of written English will both improve your vocabulary and understanding of grammar and word order. The texts below are designed to help you develop while giving you an instant evaluation of your progress.",
+    "status": 1,
+    "publish_at": "2020-08-13T11:49:15Z",
+    "types": [
+      1
+    ]
   }
 },
 {
   "model": "webapp.article",
   "pk": 5,
   "fields": {
-    "description": "wdfghy",
-    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
-    "type": 2,
+    "description": "task105",
+    "maxdescription": "English texts for beginners to practice reading and comprehension online and for free. Practicing your comprehension of written English will both improve your vocabulary and understanding of grammar and word order. The texts below are designed to help you develop while giving you an instant evaluation of your progress.",
     "status": 1,
-    "publish_at": "2020-08-10T16:27:55Z"
+    "publish_at": "2020-08-13T11:49:30Z",
+    "types": [
+      2
+    ]
   }
 },
 {
   "model": "webapp.article",
   "pk": 6,
   "fields": {
-    "description": "swdfgh",
-    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls. \u201cWe\u2019re going to take photos for the school art competition,\u201d said Kamal. Amy didn\u2019t like it but she didn\u2019t say anything. \u201cWhere\u2019s Grant?\u201d asked Tara. \u201cEr, he\u2019s buying more paint.\u201d Kamal looked away quickly. Tara thought he looked suspicious. \u201cIt\u2019s getting dark, can we go now?\u201d said Amy. She didn\u2019t like zombies.",
-    "type": 1,
+    "description": "dfgggf",
+    "maxdescription": "English texts for beginners to practice reading and comprehension online and for free. Practicing your comprehension of written English will both improve your vocabulary and understanding of grammar and word order. The texts below are designed to help you develop while giving you an instant evaluation of your progress.",
     "status": 3,
-    "publish_at": "2020-08-10T16:28:55Z"
+    "publish_at": "2020-08-13T11:49:50Z",
+    "types": [
+      3
+    ]
   }
 },
 {
   "model": "webapp.type",
   "pk": 1,
   "fields": {
-    "type": "task"
+    "name": "task"
   }
 },
 {
   "model": "webapp.type",
   "pk": 2,
   "fields": {
-    "type": "Bug"
+    "name": "Bug"
   }
 },
 {
   "model": "webapp.type",
   "pk": 3,
   "fields": {
-    "type": "Enhancement"
+    "name": "Enhancement"
   }
 },
 {
   "model": "webapp.status",
   "pk": 1,
   "fields": {
-    "status": "new"
+    "name": "new"
   }
 },
 {
   "model": "webapp.status",
   "pk": 2,
   "fields": {
-    "status": "In Progress"
+    "name": "in Progress"
   }
 },
 {
   "model": "webapp.status",
   "pk": 3,
   "fields": {
-    "status": "Done"
+    "name": "Done"
   }
 },
 {
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$150000$tXt24f4lYh8p$oSsfNe2wgzicKRpVGemkr9APNU3P4fk6/9qKyJzvgHU=",
-    "last_login": "2020-08-10T10:19:58.323Z",
+    "password": "pbkdf2_sha256$150000$D4cu9StMi1ne$WVTRa0C/+H7NcYSUYRVvOrRzZPM+7aXxe6vWm2WHWR4=",
+    "last_login": null,
     "is_superuser": true,
-    "username": "Dar",
+    "username": "dars",
     "first_name": "",
     "last_name": "",
-    "email": "dar@mail.ru",
+    "email": "sa@mail.ru",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-08-10T10:19:34.494Z",
+    "date_joined": "2020-08-13T11:38:11.895Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$IGvZQnG7S7qx$7Mu17WOAtitQX/jc6ASTkNU1wQSkEBkoJit4DGvWOmE=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "dasha",
+    "first_name": "",
+    "last_name": "",
+    "email": "ss@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-08-13T11:40:20.681Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$rjhOjliumF7m$5yj2+MHhw4Ilslre8KmBHAbYJP1Wjfvj+skSQS43YZc=",
+    "last_login": "2020-08-13T11:45:51.764Z",
+    "is_superuser": true,
+    "username": "Darr",
+    "first_name": "",
+    "last_name": "",
+    "email": "dr@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-08-13T11:44:52.144Z",
     "groups": [],
     "user_permissions": []
   }
