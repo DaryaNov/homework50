@@ -10,6 +10,7 @@ class Article(models.Model):
     types = models.ManyToManyField('webapp.Type',related_name='type_key', blank=True, verbose_name='Тип')
     status = models.ForeignKey('Status',related_name='status_key',on_delete=models.CASCADE, verbose_name='Статус')
     publish_at = models.DateTimeField(verbose_name="Время публикации", blank=True, default=timezone.now)
+    updated_at = models.DateTimeField(verbose_name='Время изменения', blank=True, default=timezone.now)
 
 
     def __str__(self):
