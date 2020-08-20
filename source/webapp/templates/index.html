@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
-
 {% block title %}Hello{% endblock %}
-
+{% block search %}
+    <div class="search-form">
+        <form action="{% url 'index' %}" method="GET">
+            {{ form.search }}
+            <input type="submit" value="Найти">
+        </form>
+    </div>
+{% endblock %}
 {% block content %}
     <h1>My First Blog!</h1>
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
     {% for article in articles %}
         <div class="linegr">
             <h3><a href="{% url "article_view" article.pk %}">{{ article.description }}</a></h3>
@@ -12,4 +21,9 @@
             <p><a href="{% url 'article_update' article.pk %}">Update</a> ~ <a href="{% url 'article_delete' article.pk %}">Delete</a></p>
         </div>
     {% endfor %}
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
 {% endblock %}
+
+

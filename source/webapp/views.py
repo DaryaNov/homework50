@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseNotAllowed
 from django.urls import reverse
@@ -5,17 +6,48 @@ from django.utils.timezone import make_naive
 from django.views.generic import View, TemplateView, FormView
 
 from webapp.models import Article
-from webapp.forms import ArticleForm, BROWSER_DATETIME_FORMAT
-from .base_view import FormView as CustomFormView
+from webapp.forms import ArticleForm, BROWSER_DATETIME_FORMAT, SimpleSearchForm
+from .base_view import FormView as CustomFormView, ListView
 
 
-class IndexView(View):
-    def get(self, request):
-        is_admin = request.GET.get('is_admin', None)
+# class IndexView(ListView):
+#     template_name = 'index.html'
+#     context_object_name = 'articles'
+#     paginate_by = 2
+#     paginate_orphans = 1
+#
+#     def get_context_data(self, *, object_list=None, **kwargs):
+#         form = SimpleSearchForm(data=self.request.GET)
+#         if form.is_valid():
+#             search = form.cleaned_data['search']
+#             kwargs['search'] = search
+#         kwargs['form'] = form
+#         return super().get_context_data(object_list=object_list, **kwargs)
+
+
+class IndexView(ListView):
+    template_name = 'index.html'
+    context_object_name = 'articles'
+    paginate_by = 2
+    paginate_orphans = 0
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        form = SimpleSearchForm(data=self.request.GET)
+        if form.is_valid():
+            search = form.cleaned_data['search']
+            kwargs['search'] = search
+        kwargs['form'] = form
+        return super().get_context_data(object_list=object_list, **kwargs)
+
+    def get_queryset(self):
         data = Article.objects.all()
-        return render(request, 'index.html', context={
-            'articles': data
-        })
+        form = SimpleSearchForm(data=self.request.GET)
+        if form.is_valid():
+            search = form.cleaned_data['search']
+            if search:
+                data = data.filter(Q(description__icontains=search) | Q(maxdescription__icontains=search))
+
+        return data.order_by('-created_at')
 
 class ArticleView(TemplateView):
     template_name = 'article_view.html'
