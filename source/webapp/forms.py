@@ -45,3 +45,7 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = ['description', 'maxdescription', 'status', 'types', 'publish_at']
+
+
+class SimpleSearchForm(forms.Form):
+    search = forms.CharField(max_length=100, required=False, label="Найти")
