@@ -139,6 +139,7 @@ h4{
 
 .pagination .current-page {
     display: inline-block;
+    color:red;
 }
 
 .pagination .current-page input {

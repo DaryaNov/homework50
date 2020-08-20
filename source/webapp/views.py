@@ -3,32 +3,18 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseNotAllowed
 from django.urls import reverse
 from django.utils.timezone import make_naive
-from django.views.generic import View, TemplateView, FormView
+from django.views.generic import View, TemplateView, FormView,ListView
 
 from webapp.models import Article
 from webapp.forms import ArticleForm, BROWSER_DATETIME_FORMAT, SimpleSearchForm
-from .base_view import FormView as CustomFormView, ListView
+from .base_view import FormView as CustomFormView
 
-
-# class IndexView(ListView):
-#     template_name = 'index.html'
-#     context_object_name = 'articles'
-#     paginate_by = 2
-#     paginate_orphans = 1
-#
-#     def get_context_data(self, *, object_list=None, **kwargs):
-#         form = SimpleSearchForm(data=self.request.GET)
-#         if form.is_valid():
-#             search = form.cleaned_data['search']
-#             kwargs['search'] = search
-#         kwargs['form'] = form
-#         return super().get_context_data(object_list=object_list, **kwargs)
 
 
 class IndexView(ListView):
     template_name = 'index.html'
     context_object_name = 'articles'
-    paginate_by = 2
+    paginate_by = 3
     paginate_orphans = 0
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -47,7 +33,7 @@ class IndexView(ListView):
             if search:
                 data = data.filter(Q(description__icontains=search) | Q(maxdescription__icontains=search))
 
-        return data.order_by('-created_at')
+        return data.order_by('-publish_at')
 
 class ArticleView(TemplateView):
     template_name = 'article_view.html'

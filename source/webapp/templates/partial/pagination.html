@@ -3,7 +3,7 @@
         <a href="?{% if search %}search={{ search }}&{% endif %}page=1">&laquo; В начало</a>
 
         {% if page_obj.has_previous %}
-            <a href="?{% if search %}search={{ search }}&{% endif %}page={{ page_obj.previous_page_number }}">Назад</a>
+                <a href="?{% if search %}search={{ search }}&{% endif %}page={{ page_obj.previous_page_number }}">Назад</a>
         {% else %}
             <span class="page-disabled">Назад</span>
         {% endif %}
