@@ -1,18 +1,19 @@
 from django.db.models import Q
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseNotAllowed
 from django.urls import reverse
 from django.utils.timezone import make_naive
-from django.views.generic import View, TemplateView, FormView,ListView
+from django.views.generic import View, TemplateView, FormView,ListView,DetailView,CreateView
 
-from webapp.models import Article
+from webapp.models import Article, Project
 from webapp.forms import ArticleForm, BROWSER_DATETIME_FORMAT, SimpleSearchForm
 from .base_view import FormView as CustomFormView
 
 
 
 class IndexView(ListView):
-    template_name = 'index.html'
+    template_name = 'article/index.html'
     context_object_name = 'articles'
     paginate_by = 3
     paginate_orphans = 0
@@ -36,7 +37,7 @@ class IndexView(ListView):
         return data.order_by('-publish_at')
 
 class ArticleView(TemplateView):
-    template_name = 'article_view.html'
+    template_name = 'article/article_view.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -47,22 +48,18 @@ class ArticleView(TemplateView):
         context['article'] = article
         return context
 
-
-class ArticleCreateView(CustomFormView):
-    template_name = 'article_create.html'
+class ArticleCreateView(CreateView):
+    template_name = 'article/article_create.html'
     form_class = ArticleForm
+    model = Article
 
-    def form_valid(self, form):
-        self.article = form.save()
-        return super().form_valid(form)
-
-    def get_redirect_url(self):
-        return reverse('article_view', kwargs={'pk': self.article.pk})
+    def get_success_url(self):
+        return reverse('article_view', kwargs={'pk': self.object.pk})
 
 
 
 class ArticleUpdateView(FormView):
-    template_name = 'article_update.html'
+    template_name = 'article/article_update.html'
     form_class = ArticleForm
 
     def dispatch(self, request, *args, **kwargs):
@@ -97,7 +94,7 @@ class ArticleUpdateView(FormView):
 def article_delete_view(request, pk):
     article = get_object_or_404(Article, pk=pk)
     if request.method == 'GET':
-        return render(request, 'article_delete.html', context={'article':article})
+        return render(request, 'article/article_delete.html', context={'article':article})
     elif request.method == 'POST':
         article.delete()
         return redirect('index')
