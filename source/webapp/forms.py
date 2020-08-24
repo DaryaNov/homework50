@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article, Status,Type
+from .models import Article, Status,Type,Project
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_slug
 
@@ -30,6 +30,7 @@ def word(words):
 
 
 class ArticleForm(forms.ModelForm):
+    project = forms.ModelMultipleChoiceField(queryset=Project.objects.all(), required=False, label='Проект')
     description = forms.CharField(max_length=200, required=True, label='Описание',validators=(at_least_5,))
     maxdescription = forms.CharField(max_length=3000, required=True, label='Подробное описание', widget=forms.Textarea,validators=(desc,word,))
     status = forms.ModelChoiceField(queryset=Status.objects.all(),  label='Статус')
@@ -44,8 +45,15 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['description', 'maxdescription', 'status', 'types', 'publish_at']
+        fields = ['description', 'maxdescription', 'status', 'types','publish_at']
 
 
 class SimpleSearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label="Найти")
+
+
+
+class ArticleProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['name', 'text' ,'newdate_at','enddate_at']

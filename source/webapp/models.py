@@ -4,7 +4,7 @@ from django.core.validators import MinLengthValidator
 
 
 class Article(models.Model):
-
+    project=models.ForeignKey('webapp.Project',related_name='project_id',default=1,blank=True,on_delete=models.CASCADE,verbose_name='Проект')
     description = models.CharField(max_length=2000, null=False, blank=False, verbose_name='Описание',validators=[MinLengthValidator(5)])
     maxdescription = models.TextField(max_length=2000,null=True,blank=False,verbose_name='Подробное описание')
     types = models.ManyToManyField('webapp.Type',related_name='type_key', blank=True, verbose_name='Тип')
@@ -52,3 +52,19 @@ class Status(models.Model):
     class Meta:
         verbose_name = 'Статус'
         verbose_name_plural = 'Статусы'
+
+
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=40, default='project',verbose_name='Название')
+    text = models.TextField(max_length=400, null=True, blank=True, verbose_name='Описание')
+    newdate_at = models.DateField(max_length=10, null=True,blank=False, verbose_name='Дата создания')
+    enddate_at = models.DateField(max_length=10, null=True,blank=False, verbose_name='Дата выполнения')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Проект'
+        verbose_name_plural = 'Проекты'
