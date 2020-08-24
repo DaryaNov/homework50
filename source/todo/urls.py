@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from webapp.views import IndexView, ArticleCreateView, ArticleView, ArticleUpdateView, article_delete_view
+from webapp.views import IndexView, ArticleCreateView, ArticleView, ArticleUpdateView, \
+article_delete_view, ArticleProjectCreateView,Index_View,ProjectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,7 @@ urlpatterns = [
     path('articles/add/', ArticleCreateView.as_view(), name='article_create'),
     path('article/<int:pk>/update/', ArticleUpdateView.as_view(), name='article_update'),
     path('article/<int:pk>/delete/', article_delete_view, name='article_delete'),
+    path('article/project/', Index_View.as_view(), name='index_project'),
+    path('article/<int:pk>/projects/add', ArticleProjectCreateView.as_view(),name='project_create'),
+    path('article/<int:pk>/task', ProjectView.as_view(), name='project_view')
 ]
