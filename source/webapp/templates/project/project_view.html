@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}View{% endblock %}
+
+{% block content %}
+     <h1>Project:</h1>
+    <h2>{{ project.name }}</h2>
+     <p>{{ project.text }}</p>
+    <p>New date:{{ project.newdate_at }}</p>
+    <p>End date at: {{ project.enddate_at }}</p>
+    <p><a href="/article/project">На главную</a></p>
+        <h3>Task:</h3>
+        {% if is_paginated %}
+            {% include 'partial/pagination.html' %}
+        {% endif %}
+        {% for article in articles %}
+                <<h4>{{ article.description }}</h4>
+                <p>{{ article.maxdescription }}</p>
+                <p>Status:{{ article.status }}</p>
+                <p>Published at: {{ article.publish_at|date:"d.m.Y H:i:s" }}</p>
+                <p>Type: {% for type in article.types.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+        {% empty %}
+            <p>Нет задач</p>
+        {% endfor %}
+        {% if is_paginated %}
+            {% include 'partial/pagination.html' %}
+        {% endif %}
+
+{% endblock %}
