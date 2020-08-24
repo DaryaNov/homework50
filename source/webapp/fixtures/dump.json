@@ -1,57 +1,16 @@
 [
 {
   "model": "webapp.article",
-  "pk": 1,
-  "fields": {
-    "description": "Task1",
-    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls",
-    "status": 1,
-    "publish_at": "2020-08-19T16:01:35Z",
-    "updated_at": "2020-08-19T16:01:35Z",
-    "types": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 2,
-  "fields": {
-    "description": "top22",
-    "maxdescription": "After school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the wallsAfter school, Kamal took the girls to the old house. It was very old and very dirty too. There was rubbish everywhere. The windows were broken and the walls were damp. It was scary. Amy didn\u2019t like it. There were paintings of zombies and skeletons on the walls",
-    "status": 2,
-    "publish_at": "2020-08-10T16:02:07Z",
-    "updated_at": "2020-08-19T16:02:07Z",
-    "types": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 3,
-  "fields": {
-    "description": "Task45",
-    "maxdescription": "text text text",
-    "status": 2,
-    "publish_at": "2020-08-07T16:02:26Z",
-    "updated_at": "2020-08-19T16:02:26Z",
-    "types": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.article",
   "pk": 4,
   "fields": {
-    "description": "ask105",
-    "maxdescription": "After school,   windows",
+    "project": 1,
+    "description": "Text52",
+    "maxdescription": "The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.",
     "status": 2,
-    "publish_at": "2020-08-16T16:02:53Z",
-    "updated_at": "2020-08-19T16:02:53Z",
+    "publish_at": "2020-08-09T20:28:53Z",
+    "updated_at": "2020-08-23T20:28:53Z",
     "types": [
-      3
+      1
     ]
   }
 },
@@ -59,13 +18,14 @@
   "model": "webapp.article",
   "pk": 5,
   "fields": {
-    "description": "Task125",
-    "maxdescription": "skeletons on the walls",
-    "status": 1,
-    "publish_at": "2020-08-03T16:03:22Z",
-    "updated_at": "2020-08-19T16:03:22Z",
+    "project": 1,
+    "description": "water",
+    "maxdescription": "text text text text text",
+    "status": 3,
+    "publish_at": "2020-08-23T20:29:11Z",
+    "updated_at": "2020-08-23T20:29:11Z",
     "types": [
-      3
+      2
     ]
   }
 },
@@ -73,11 +33,12 @@
   "model": "webapp.article",
   "pk": 6,
   "fields": {
-    "description": "Task457",
-    "maxdescription": "frfrfrfrfrfrfrfrfrfr",
+    "project": 1,
+    "description": "head5",
+    "maxdescription": "The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.",
     "status": 3,
-    "publish_at": "2020-08-19T16:03:44Z",
-    "updated_at": "2020-08-19T16:03:44Z",
+    "publish_at": "2020-08-14T20:29:39Z",
+    "updated_at": "2020-08-23T20:29:39Z",
     "types": [
       3
     ]
@@ -87,13 +48,14 @@
   "model": "webapp.article",
   "pk": 7,
   "fields": {
-    "description": "Task236",
-    "maxdescription": "ddddfrfrfrfdddddd",
-    "status": 3,
-    "publish_at": "2020-08-17T16:04:00Z",
-    "updated_at": "2020-08-19T16:04:00Z",
+    "project": 1,
+    "description": "Eyess",
+    "maxdescription": "The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.",
+    "status": 1,
+    "publish_at": "2020-08-23T20:29:59Z",
+    "updated_at": "2020-08-23T20:29:59Z",
     "types": [
-      1
+      3
     ]
   }
 },
@@ -101,11 +63,12 @@
   "model": "webapp.article",
   "pk": 8,
   "fields": {
-    "description": "Boord",
-    "maxdescription": "tasktasktsak",
-    "status": 3,
-    "publish_at": "2020-08-14T16:04:19Z",
-    "updated_at": "2020-08-19T16:04:19Z",
+    "project": 1,
+    "description": "text568",
+    "maxdescription": "taskatsakghdjksldfds",
+    "status": 1,
+    "publish_at": "2020-08-24T08:28:00Z",
+    "updated_at": "2020-08-24T08:28:27.514Z",
     "types": [
       1
     ]
@@ -154,19 +117,29 @@
   }
 },
 {
+  "model": "webapp.project",
+  "pk": 1,
+  "fields": {
+    "name": "description",
+    "text": "name",
+    "newdate_at": "2020-08-24",
+    "enddate_at": "2020-08-29"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$150000$5ApuqSKPZH6A$Tw3s2cRSkTGlbUyMcd8aeG2kq3QlSACGI0z5qBqmAR4=",
-    "last_login": "2020-08-19T15:59:59.579Z",
+    "password": "pbkdf2_sha256$150000$DJ90eqN7nbV8$Qx6bkd8HPGt4hq8qL5+bxEuk/NKSh4XfdFCPzgsnwRU=",
+    "last_login": "2020-08-23T20:26:06.924Z",
     "is_superuser": true,
-    "username": "Dassha",
+    "username": "far",
     "first_name": "",
     "last_name": "",
     "email": "df@mail.ru",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-08-19T15:59:07.180Z",
+    "date_joined": "2020-08-23T20:24:58.773Z",
     "groups": [],
     "user_permissions": []
   }
