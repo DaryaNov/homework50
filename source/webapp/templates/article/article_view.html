@@ -10,4 +10,10 @@
     <p>Published at: {{ article.publish_at|date:"d.m.Y H:i:s" }}</p>
      <p>Type: {% for type in article.types.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
     <p><a href="/">На главную</a></p>
+    <hr>
+    <h2>Projects:</h2>
+    <h3>name :{{ project.name }}</h3>
+    <h3> Описание :{{ project.text }}</h3>
+
+
 {% endblock %}
