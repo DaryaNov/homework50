@@ -30,7 +30,6 @@ def word(words):
 
 
 class ArticleForm(forms.ModelForm):
-    project = forms.ModelMultipleChoiceField(queryset=Project.objects.all(), required=False, label='Проект')
     description = forms.CharField(max_length=200, required=True, label='Описание',validators=(at_least_5,))
     maxdescription = forms.CharField(max_length=3000, required=True, label='Подробное описание', widget=forms.Textarea,validators=(desc,word,))
     status = forms.ModelChoiceField(queryset=Status.objects.all(),  label='Статус')

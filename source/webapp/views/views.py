@@ -2,9 +2,9 @@ from django.db.models import Q
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseNotAllowed
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 from django.utils.timezone import make_naive
-from django.views.generic import View, TemplateView, FormView,ListView,DetailView,CreateView
+from django.views.generic import TemplateView,ListView,CreateView,DeleteView,UpdateView
 
 from webapp.models import Article, Project
 from webapp.forms import ArticleForm, BROWSER_DATETIME_FORMAT, SimpleSearchForm
@@ -49,54 +49,42 @@ class ArticleView(TemplateView):
         return context
 
 class ArticleCreateView(CreateView):
+    model = Article
     template_name = 'article/article_create.html'
     form_class = ArticleForm
+
+    def form_valid(self, form):
+        project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
+        types = form.cleaned_data.pop('types')
+        article = form.save(commit=False)
+        article.project = project
+        article.save()
+        article.types.set(types)
+        return redirect('project_view',pk=project.pk)
+
+
+
+
+class ArticleUpdateView(UpdateView):
+    template_name = 'article/article_update.html'
+    form_class = ArticleForm
     model = Article
+
+    def get_initial(self):
+        return {'publish_at': make_naive(self.object.publish_at)\
+            .strftime(BROWSER_DATETIME_FORMAT)}
 
     def get_success_url(self):
         return reverse('article_view', kwargs={'pk': self.object.pk})
 
 
 
-class ArticleUpdateView(FormView):
-    template_name = 'article/article_update.html'
-    form_class = ArticleForm
-
-    def dispatch(self, request, *args, **kwargs):
-        self.article = self.get_object()
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['article'] = self.article
-        return context
-
-    def get_initial(self):
-        initial = {}
-        for key in 'description', 'maxdescription', 'status':
-            initial[key] = getattr(self.article, key)
-        initial['publish_at'] = make_naive(self.article.publish_at)\
-            .strftime(BROWSER_DATETIME_FORMAT)
-        initial['types'] = self.article.types.all()
-        return initial
-
-    def form_valid(self, form):
-        self.article = form.save()
-        return super().form_valid(form)
+class ArticleDeleteView(DeleteView):
+    template_name = 'article/article_delete.html'
+    model = Article
 
     def get_success_url(self):
-        return reverse('article_view', kwargs={'pk': self.article.pk})
+        return reverse('project_view',kwargs={'pk':self.object.pk})
 
-    def get_object(self):
-        pk = self.kwargs.get('pk')
-        return get_object_or_404(Article, pk=pk)
 
-def article_delete_view(request, pk):
-    article = get_object_or_404(Article, pk=pk)
-    if request.method == 'GET':
-        return render(request, 'article/article_delete.html', context={'article':article})
-    elif request.method == 'POST':
-        article.delete()
-        return redirect('index')
-    else:
-        return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
+

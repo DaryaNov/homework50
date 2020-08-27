@@ -1,4 +1,4 @@
-from django.views.generic import CreateView,ListView, DetailView , FormView
+from django.views.generic import CreateView,ListView, DetailView , FormView, UpdateView, DeleteView
 from django.core.paginator import Paginator
 from django.http import HttpResponseNotAllowed
 from django.shortcuts import render, redirect, get_object_or_404,reverse
@@ -19,8 +19,6 @@ class Index_View(ListView):
 class ProjectView(DetailView):
     template_name = 'project/project_view.html'
     model = Project
-    paginate_projects_by = 2
-    paginate_projects_orphans = 0
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -32,22 +30,35 @@ class ProjectView(DetailView):
         return context
 
 
+
 class ArticleProjectCreateView(CreateView):
     model = Project
+    form_class = ArticleProjectForm
     template_name = 'project/project_create.html'
+
+    def get_success_url(self):
+        return reverse('project_view', kwargs={'pk': self.object.pk})
+
+
+
+class ProjectUpdateView(UpdateView):
+    model = Project
+    template_name = 'project/project_update.html'
     form_class = ArticleProjectForm
 
-    def form_valid(self, form):
-        article = get_object_or_404(Article, pk=self.kwargs.get('pk'))
-        project = form.save(commit=False)
-        project.article = article
-        project.save()
-        return redirect('project/project_view', pk=article.pk)
+    def get_success_url(self):
+        return reverse('project_view', kwargs={'pk': self.object.pk})
 
-    # def form_valid(self, form):
-    #     article = get_object_or_404(Article, pk=self.kwargs.get('pk'))
-    #     form.instance.article = article
-    #     return super().form_valid(form)
+
+class ProjectDeleteView(DeleteView):
+    model = Project
+    template_name = 'project/project_delete.html'
+    context_object_name = 'project'
+
+    def get_success_url(self):
+        return reverse('index_project')
+
+
 
 
 
