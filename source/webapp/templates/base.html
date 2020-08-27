@@ -8,8 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}My Site{% endblock %}</title>
 
-    <!-- XDSoft DateTimePicker -->
-
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block links %}{% endblock %}
 </head>
@@ -17,9 +15,8 @@
     <nav class="navbar">
         <div class="container">
             <ul class="menu">
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'article_create' %}">Add Article</a></li>
                 <li><a href="{% url 'index_project' %}">Projects</a></li>
+                <li><a href="{% url 'index' %}">Tasks</a></li>
                 {% block menu %}{% endblock %}
             </ul>
 

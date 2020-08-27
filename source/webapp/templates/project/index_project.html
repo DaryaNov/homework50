@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
-
 {% block title %}Hello{% endblock %}
 
 {% block content %}
-    <h1>Projects!</h1>
-    {% for project in projects %}
-        <h4><a href="{% url "project_view" project.pk %}">{{ project.name }}</a></h4>
-        <p>Описание: {{ project.text }} </p>
-        <p>Published at: {{ project.newdate_at}}</p>
-        <a href="{% url 'project_create' project.pk %}">Create</a>
+    <h1>My First Blog!</h1>
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+     {% for project in projects %}
+         <div class="linegr">
+            <h4><a href="{% url "project_view" project.pk %}">{{ project.name }}</a></h4>
+            <p>Описание: {{ project.text }} </p>
+            <p>Published at: {{ project.newdate_at}}</p>
+            <p><a href="{% url 'project_update' project.pk %}">Update</a>~<a href="{% url 'project_delete' project.pk %}">Delete</a></p>
+         </div>
     {% endfor %}
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
 {% endblock %}
+
+
