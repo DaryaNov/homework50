@@ -16,16 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from webapp.views import IndexView, ArticleCreateView, ArticleView, ArticleUpdateView, \
-article_delete_view, ArticleProjectCreateView,Index_View,ProjectView
+ArticleDeleteView, ArticleProjectCreateView,Index_View,ProjectView,ProjectUpdateView,ProjectDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('article/<int:pk>/', ArticleView.as_view(), name='article_view'),
-    path('articles/add/', ArticleCreateView.as_view(), name='article_create'),
+    path('projects/<int:pk>/article/add', ArticleCreateView.as_view(), name='article_create'),
     path('article/<int:pk>/update/', ArticleUpdateView.as_view(), name='article_update'),
-    path('article/<int:pk>/delete/', article_delete_view, name='article_delete'),
-    path('article/project/', Index_View.as_view(), name='index_project'),
-    path('article/<int:pk>/projects/add', ArticleProjectCreateView.as_view(),name='project_create'),
-    path('article/<int:pk>/task', ProjectView.as_view(), name='project_view')
+    path('article/<int:pk>/delete/', ArticleDeleteView, name='article_delete'),
+
+    path('project/', Index_View.as_view(), name='index_project'),
+    path('projects/add', ArticleProjectCreateView.as_view(),name='project_create'),
+    path('project/<int:pk>', ProjectView.as_view(), name='project_view'),
+    path('projects/<int:pk>/update/', ProjectUpdateView.as_view(), name='project_update'),
+    path('project/<int:pk>/delete/', ProjectDeleteView.as_view(), name='project_delete')
 ]
