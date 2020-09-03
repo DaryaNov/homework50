@@ -1,14 +1,14 @@
 [
 {
   "model": "webapp.article",
-  "pk": 4,
+  "pk": 1,
   "fields": {
     "project": 1,
-    "description": "Text52",
-    "maxdescription": "The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.",
-    "status": 2,
-    "publish_at": "2020-08-09T20:28:53Z",
-    "updated_at": "2020-08-23T20:28:53Z",
+    "description": "ADSFDG",
+    "maxdescription": "MultipleObjectTemplateResponseMixinMultipleObjectTemplateResponseMixinMultipleObjectTemplateResponseMixin",
+    "status": 1,
+    "publish_at": "2020-09-03T09:25:43Z",
+    "updated_at": "2020-09-03T09:25:43Z",
     "types": [
       1
     ]
@@ -16,14 +16,14 @@
 },
 {
   "model": "webapp.article",
-  "pk": 5,
+  "pk": 2,
   "fields": {
     "project": 1,
-    "description": "water",
-    "maxdescription": "text text text text text",
-    "status": 3,
-    "publish_at": "2020-08-23T20:29:11Z",
-    "updated_at": "2020-08-23T20:29:11Z",
+    "description": "Task45",
+    "maxdescription": "sdfgasdf",
+    "status": 2,
+    "publish_at": "2020-09-02T09:41:00Z",
+    "updated_at": "2020-09-03T09:41:40.617Z",
     "types": [
       2
     ]
@@ -31,14 +31,14 @@
 },
 {
   "model": "webapp.article",
-  "pk": 6,
+  "pk": 3,
   "fields": {
     "project": 1,
-    "description": "head5",
-    "maxdescription": "The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.",
+    "description": "wdfghy",
+    "maxdescription": "formformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformformform",
     "status": 3,
-    "publish_at": "2020-08-14T20:29:39Z",
-    "updated_at": "2020-08-23T20:29:39Z",
+    "publish_at": "2020-08-20T09:50:00Z",
+    "updated_at": "2020-09-03T09:50:25.231Z",
     "types": [
       3
     ]
@@ -46,29 +46,14 @@
 },
 {
   "model": "webapp.article",
-  "pk": 7,
+  "pk": 4,
   "fields": {
-    "project": 1,
-    "description": "Eyess",
-    "maxdescription": "The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.The main task is to develop early stages manoeuvres.",
+    "project": 2,
+    "description": "wdfghy",
+    "maxdescription": "Projects",
     "status": 1,
-    "publish_at": "2020-08-23T20:29:59Z",
-    "updated_at": "2020-08-23T20:29:59Z",
-    "types": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.article",
-  "pk": 8,
-  "fields": {
-    "project": 1,
-    "description": "text568",
-    "maxdescription": "taskatsakghdjksldfds",
-    "status": 1,
-    "publish_at": "2020-08-24T08:28:00Z",
-    "updated_at": "2020-08-24T08:28:27.514Z",
+    "publish_at": "2020-09-03T09:52:00Z",
+    "updated_at": "2020-09-03T09:52:55.479Z",
     "types": [
       1
     ]
@@ -85,14 +70,14 @@
   "model": "webapp.type",
   "pk": 2,
   "fields": {
-    "name": "Enhancement"
+    "name": "Bug"
   }
 },
 {
   "model": "webapp.type",
   "pk": 3,
   "fields": {
-    "name": "Bug"
+    "name": "Enhancement"
   }
 },
 {
@@ -120,26 +105,36 @@
   "model": "webapp.project",
   "pk": 1,
   "fields": {
-    "name": "description",
-    "text": "name",
-    "newdate_at": "2020-08-24",
-    "enddate_at": "2020-08-29"
+    "name": "Project5",
+    "text": "MultipleObjectTemplateRe",
+    "newdate_at": "2020-09-02",
+    "enddate_at": "2020-09-23"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 2,
+  "fields": {
+    "name": "project15",
+    "text": "nononnononoon",
+    "newdate_at": "2020-08-26",
+    "enddate_at": "2020-09-09"
   }
 },
 {
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$150000$DJ90eqN7nbV8$Qx6bkd8HPGt4hq8qL5+bxEuk/NKSh4XfdFCPzgsnwRU=",
-    "last_login": "2020-08-23T20:26:06.924Z",
+    "password": "pbkdf2_sha256$150000$Btl08RgBpPKY$i1oH1kufHEMWJWv1K2tCAd3v3gaXxX+JPzUZ4dpCmDo=",
+    "last_login": "2020-09-03T09:58:03.213Z",
     "is_superuser": true,
-    "username": "far",
+    "username": "Dafa",
     "first_name": "",
     "last_name": "",
     "email": "df@mail.ru",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-08-23T20:24:58.773Z",
+    "date_joined": "2020-09-03T09:23:41.138Z",
     "groups": [],
     "user_permissions": []
   }
