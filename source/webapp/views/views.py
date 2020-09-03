@@ -1,4 +1,6 @@
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseNotAllowed
@@ -35,6 +37,15 @@ class IndexView(ListView):
                 data = data.filter(Q(description__icontains=search) | Q(maxdescription__icontains=search))
 
         return data.order_by('-publish_at')
+
+@login_required
+def article_mass_action_view(request):
+    if request.method == 'POST':
+        ids = request.POST.getlist('selected_articles', [])
+        if 'delete' in request.POST:
+            Article.objects.filter(id__in=ids).delete()
+    return redirect('index')
+
 
 class ArticleView(TemplateView):
     template_name = 'article/article_view.html'
@@ -84,7 +95,7 @@ class ArticleDeleteView(DeleteView):
     model = Article
 
     def get_success_url(self):
-        return reverse('project_view',kwargs={'pk':self.object.pk})
+        return reverse('project_view',kwargs={'pk':self.object.project.pk})
 
 
 
