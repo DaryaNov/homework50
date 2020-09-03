@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from webapp.views import IndexView, ArticleCreateView, ArticleView, ArticleUpdateView, \
 ArticleDeleteView, ArticleProjectCreateView,Index_View,ProjectView,ProjectUpdateView,ProjectDeleteView
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,11 +25,14 @@ urlpatterns = [
     path('article/<int:pk>/', ArticleView.as_view(), name='article_view'),
     path('projects/<int:pk>/article/add', ArticleCreateView.as_view(), name='article_create'),
     path('article/<int:pk>/update/', ArticleUpdateView.as_view(), name='article_update'),
-    path('article/<int:pk>/delete/', ArticleDeleteView, name='article_delete'),
+    path('article/<int:pk>/delete/', ArticleDeleteView.as_view(), name='article_delete'),
 
     path('project/', Index_View.as_view(), name='index_project'),
     path('projects/add', ArticleProjectCreateView.as_view(),name='project_create'),
     path('project/<int:pk>', ProjectView.as_view(), name='project_view'),
     path('projects/<int:pk>/update/', ProjectUpdateView.as_view(), name='project_update'),
-    path('project/<int:pk>/delete/', ProjectDeleteView.as_view(), name='project_delete')
+    path('project/<int:pk>/delete/', ProjectDeleteView.as_view(), name='project_delete'),
+
+    path('accounts/login/', LoginView.as_view(), name='login'),
+    path('accounts/logout/', LogoutView.as_view(), name='logout')
 ]
