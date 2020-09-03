@@ -9,12 +9,5 @@
     <p>Status:{{ article.status }}</p>
     <p>Published at: {{ article.publish_at|date:"d.m.Y H:i:s" }}</p>
      <p>Type: {% for type in article.types.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-    <hr>
-    <h3>Project:</h3>
-        {%for project in projects %}
-                <h4>{{ project.name }}</h4>
-        {% empty %}
-            <p>Нет проекта</p>
-        {% endfor %}
 
 {% endblock %}

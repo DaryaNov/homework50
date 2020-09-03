@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {% block title %}View{% endblock %}
-{% block menu %}
-    <li><a href="{% url 'article_create' project.pk %}">Add Task</a></li>
-{% endblock %}
+{% if request.user.is_authenticated %}
+                     <li><a href="{% url 'article_create' project.pk %}">Task Add</a></li>
+                    {% block menu %}{% endblock %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
 {% block content %}
      <h1>Project:</h1>
     <h2>{{ project.name }}</h2>
      <p>{{ project.text }}</p>
     <p>New date:{{ project.newdate_at }}</p>
     <p>End date at: {{ project.enddate_at }}</p>
+    <hr>
         <h3>Task:</h3>
         {% if is_paginated %}
             {% include 'partial/pagination.html' %}
@@ -17,6 +22,9 @@
         {% if project.project_id.all %}
              {% for article in project.project_id.all %}
                  <h4><a href="{% url 'article_view' article.pk %}">{{ article.description }}</a></h4>
+                 {% if request.user.is_authenticated %}
+                    <p><a href="{% url 'article_update' article.pk %}">Update</a> ~ <a href="{% url 'article_delete' article.pk %}">Delete</a></p>
+                 {% endif %}
              {% endfor %}
         {% else %}
             <p>Нет задач</p>
