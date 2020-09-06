@@ -47,6 +47,7 @@ def article_mass_action_view(request):
     return redirect('index')
 
 
+
 class ArticleView(TemplateView):
     template_name = 'article/article_view.html'
 
