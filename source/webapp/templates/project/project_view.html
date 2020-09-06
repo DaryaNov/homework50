@@ -16,6 +16,9 @@
     <p>End date at: {{ project.enddate_at }}</p>
     <hr>
         <h3>Task:</h3>
+        {% if request.user.is_authenticated %}
+            <p><a href="{% url 'article_create' project.pk %}">Task Add</a></p>
+        {% endif %}
         {% if is_paginated %}
             {% include 'partial/pagination.html' %}
         {% endif %}
