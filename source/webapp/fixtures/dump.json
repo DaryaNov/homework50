@@ -1,0 +1,205 @@
+[
+{
+  "model": "webapp.article",
+  "pk": 1,
+  "fields": {
+    "project": 1,
+    "description": "Task45",
+    "maxdescription": "wertyuioplkjhgfdswedrfrgtg",
+    "status": 1,
+    "publish_at": "2020-09-02T11:04:00Z",
+    "updated_at": "2020-09-06T11:04:37.920Z",
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 2,
+  "fields": {
+    "project": 1,
+    "description": "swdfgh",
+    "maxdescription": "authorauthorauthorauthorauthorauthor",
+    "status": 2,
+    "publish_at": "2020-08-20T11:04:00Z",
+    "updated_at": "2020-09-06T11:05:03.117Z",
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 3,
+  "fields": {
+    "project": 1,
+    "description": "Task454",
+    "maxdescription": "Text",
+    "status": 1,
+    "publish_at": "2020-09-06T11:05:00Z",
+    "updated_at": "2020-09-06T11:05:18.520Z",
+    "types": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 4,
+  "fields": {
+    "project": 1,
+    "description": "Task1",
+    "maxdescription": "taskaaaaaaas",
+    "status": 2,
+    "publish_at": "2020-09-02T11:05:00Z",
+    "updated_at": "2020-09-06T11:05:38.028Z",
+    "types": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 5,
+  "fields": {
+    "project": 2,
+    "description": "Task15",
+    "maxdescription": "sitesite",
+    "status": 2,
+    "publish_at": "2020-09-04T11:06:00Z",
+    "updated_at": "2020-09-06T11:06:17.015Z",
+    "types": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 6,
+  "fields": {
+    "project": 2,
+    "description": "Task4556",
+    "maxdescription": "dsedrfthgyjuio",
+    "status": 2,
+    "publish_at": "2020-09-02T11:06:00Z",
+    "updated_at": "2020-09-06T11:06:30.095Z",
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 7,
+  "fields": {
+    "project": 2,
+    "description": "ADSFDG",
+    "maxdescription": "authorauthortext",
+    "status": 3,
+    "publish_at": "2020-09-03T11:06:00Z",
+    "updated_at": "2020-09-06T11:06:43.838Z",
+    "types": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "name": "task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "name": "Enhancement"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "name": "Bug"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "name": "new"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "name": "in Progress"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "name": "Done"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 1,
+  "fields": {
+    "name": "project",
+    "text": "asdfegtdrhyjku",
+    "newdate_at": "2020-08-24",
+    "enddate_at": "2020-09-09"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 2,
+  "fields": {
+    "name": "project15",
+    "text": "tasks",
+    "newdate_at": "2020-08-27",
+    "enddate_at": "2020-09-25"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$zgTS2Zb6jI9Q$nuQ3XFyRvWx91KxxJBkH99Aw5BheM+3mYZFKt5gBVWY=",
+    "last_login": "2020-09-06T11:02:08.192Z",
+    "is_superuser": false,
+    "username": "DaryaNov",
+    "first_name": "Daria",
+    "last_name": "Novoselova",
+    "email": "dasha_novoselova98@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-09-06T10:57:54.033Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$TC7AXblFVxrY$1IXWh+UXVw1ZPPVRzBqXOQRFhmtcJWSRjl/fcYBh6uc=",
+    "last_login": "2020-09-06T11:03:38.178Z",
+    "is_superuser": true,
+    "username": "Dass",
+    "first_name": "",
+    "last_name": "",
+    "email": "d@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-09-06T11:03:21.835Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
