@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MinLengthValidator
@@ -57,6 +58,7 @@ class Status(models.Model):
 
 
 class Project(models.Model):
+    users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='user', blank=True)
     name = models.CharField(max_length=40, default='project',verbose_name='Название')
     text = models.TextField(max_length=400, null=True, blank=True, verbose_name='Описание')
     newdate_at = models.DateField(max_length=10, null=True,blank=False, verbose_name='Дата создания')
