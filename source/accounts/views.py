@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from django.views.generic import CreateView
+from webapp.views.base_view import ListView
 
 from accounts.forms import MyUserCreationForm
 
@@ -24,6 +25,15 @@ from accounts.forms import MyUserCreationForm
 # def logout_view(request):
 #     logout(request)
 #     return redirect('index')
+
+
+class User_View(ListView):
+    model = User
+    template_name = 'user_view.html'
+    form_class = MyUserCreationForm
+
+    def get_objects(self):
+        return User.objects.order_by('-username')
 
 
 class RegisterView(CreateView):
