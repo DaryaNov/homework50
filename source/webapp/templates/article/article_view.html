@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}View{% endblock %}
-
+{% block menu %}
+{% if perms.webapp.add_article and request.user in project.users.all %}
+        <li><a href="{% url 'article_create' article.pk %}">Add Task</a></li>
+    {% endif %}
+{% endblock %}
 {% block content %}
     <h1>Article:</h1>
     <h2>{{ article.description }}</h2>

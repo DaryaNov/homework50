@@ -11,7 +11,9 @@
             <h4><a href="{% url "project_view" project.pk %}">{{ project.name }}</a></h4>
             <p>Описание: {{ project.text }} </p>
             <p>Published at: {{ project.newdate_at}}</p>
-            <p><a href="{% url 'project_update' project.pk %}">Update</a>~<a href="{% url 'project_delete' project.pk %}">Delete</a></p>
+             {% if perms.webapp.view_project and request.user in project.users.all %}
+                <p><a href="{% url 'project_update' project.pk %}">Update</a>~<a href="{% url 'project_delete' project.pk %}">Delete</a></p>
+            {% endif %}
          </div>
     {% endfor %}
     {% if is_paginated %}
