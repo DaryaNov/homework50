@@ -1,9 +1,7 @@
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponseNotAllowed
 from django.urls import reverse,reverse_lazy
 from django.utils.timezone import make_naive
 from django.views.generic import TemplateView,ListView,CreateView,DeleteView,UpdateView
@@ -60,7 +58,7 @@ class ArticleView(TemplateView):
         context['article'] = article
         return context
 
-class ArticleCreateView(CreateView):
+class ArticleCreateView(LoginRequiredMixin,CreateView):
     model = Article
     template_name = 'article/article_create.html'
     form_class = ArticleForm
@@ -70,6 +68,7 @@ class ArticleCreateView(CreateView):
         types = form.cleaned_data.pop('types')
         article = form.save(commit=False)
         article.project = project
+        article.users = self.request.user
         article.save()
         article.types.set(types)
         return redirect('project_view',pk=project.pk)
@@ -77,10 +76,15 @@ class ArticleCreateView(CreateView):
 
 
 
-class ArticleUpdateView(UpdateView):
+class ArticleUpdateView(PermissionRequiredMixin,UpdateView):
     template_name = 'article/article_update.html'
     form_class = ArticleForm
     model = Article
+    permission_required = 'webapp.change_article'
+
+    def has_permission(self):
+        project = self.get_object()
+        return super().has_permission()  and self.request.user in project.users.all()
 
     def get_initial(self):
         return {'publish_at': make_naive(self.object.publish_at)\
@@ -91,9 +95,17 @@ class ArticleUpdateView(UpdateView):
 
 
 
-class ArticleDeleteView(DeleteView):
+class ArticleDeleteView(PermissionRequiredMixin,DeleteView):
     template_name = 'article/article_delete.html'
     model = Article
+    permission_required = 'webapp.delete_article'
+
+    def get(self, request, *args, **kwargs):
+        return self.delete(request, *args, **kwargs)
+
+    def has_permission(self):
+        article = self.get_object()
+        return super().has_permission() and self.request.user in article.users.all()
 
     def get_success_url(self):
         return reverse('project_view',kwargs={'pk':self.object.project.pk})
