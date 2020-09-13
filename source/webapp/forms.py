@@ -29,6 +29,13 @@ def word(words):
 
 
 
+class ProjectUserForm(forms.ModelForm):
+    class Meta:
+        model=Project
+        fields=['users']
+        widgets={'user':forms.CheckboxSelectMultiple(attrs={'class':'radio-btn'})
+                 }
+
 class ArticleForm(forms.ModelForm):
     description = forms.CharField(max_length=200, required=True, label='Описание',validators=(at_least_5,))
     maxdescription = forms.CharField(max_length=3000, required=True, label='Подробное описание', widget=forms.Textarea,validators=(desc,word,))

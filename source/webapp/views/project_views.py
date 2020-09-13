@@ -4,9 +4,10 @@ from django.views.generic import CreateView,ListView, DetailView , FormView, Upd
 from django.core.paginator import Paginator
 from django.http import HttpResponseNotAllowed
 from django.shortcuts import render, redirect, get_object_or_404,reverse
-from webapp.models import Project, Article
-from webapp.forms import ArticleProjectForm
 
+from accounts.admin import User
+from webapp.models import Project, Article
+from webapp.forms import ArticleProjectForm, ProjectUserForm
 
 
 class Index_View(ListView):
@@ -19,7 +20,7 @@ class Index_View(ListView):
 
 
 @login_required
-def article_mass_action_view(request):
+def project_mass_action_view(request):
     if request.method == 'POST':
         ids = request.POST.getlist('selected_projects', [])
         if 'delete' in request.POST:
@@ -67,12 +68,18 @@ class ArticleProjectCreateView(PermissionRequiredMixin,CreateView):
 class ProjectUpdateView(PermissionRequiredMixin,UpdateView):
     model = Project
     template_name = 'project/project_update.html'
-    form_class = ArticleProjectForm
-    permission_required = 'webapp.change_project'
+    form_class = ProjectUserForm
+    permission_required = 'webapp.can_change_project'
+
 
     def has_permission(self):
         project = self.get_object()
         return super().has_permission() and self.request.user in project.users.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['users'] = User
+        return context
 
     def get_success_url(self):
         return reverse('project_view', kwargs={'pk': self.object.pk})
