@@ -18,10 +18,10 @@
             <h3><a href="{% url "article_view" article.pk %}">{{ article.description }}</a></h3>
             <p>Статус: ({{ article.status }}  {{ article.get_status_display }})</p>
             <p>Published at: {{ article.publish_at|date:"d.m.Y H:i:s" }}</p>
-            {% if perms.webapp.change_article and request.user in project.users.all %}
+            {% if perms.webapp.change_article or request.user in project.users.all %}
                 <p><a href="{% url 'article_update' article.pk %}">Update</a></p>
             {% endif %}
-            {% if perms.webapp.delete_article and request.user in project.users.all %}
+            {% if perms.webapp.delete_article or request.user in project.users.all %}
                     <p><a href="{% url 'article_delete' article.pk %}">Delete</a></p>
             {% endif %}
         </div>

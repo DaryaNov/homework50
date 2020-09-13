@@ -33,7 +33,7 @@
     <p>End date at: {{ project.enddate_at }}</p>
     <hr>
         <h3>Task:</h3>
-         {% if perms.webapp.add_article and request.user in project.users.all%}
+         {% if perms.webapp.add_article or request.user in project.users.all%}
             <p><a href="{% url 'article_create' project.pk %}">Task Add</a></p>
         {% endif %}
         {% if is_paginated %}
