@@ -5,10 +5,10 @@
   "fields": {
     "project": 1,
     "description": "Task45",
-    "maxdescription": "ddddddddddddddddddddddddddddddd",
+    "maxdescription": "adsfgrhyju",
     "status": 1,
-    "publish_at": "2020-09-13T10:25:09Z",
-    "updated_at": "2020-09-13T10:25:09Z",
+    "publish_at": "2020-09-15T09:20:49Z",
+    "updated_at": "2020-09-15T09:20:49Z",
     "types": [
       1
     ]
@@ -19,11 +19,11 @@
   "pk": 2,
   "fields": {
     "project": 1,
-    "description": "ADSFDG",
-    "maxdescription": "wwwwwwwwwwwwwwwwwwww",
-    "status": 4,
-    "publish_at": "2020-09-13T10:25:18Z",
-    "updated_at": "2020-09-13T10:25:18Z",
+    "description": "Task78",
+    "maxdescription": "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+    "status": 2,
+    "publish_at": "2020-09-15T09:20:58Z",
+    "updated_at": "2020-09-15T09:20:58Z",
     "types": [
       2
     ]
@@ -34,11 +34,26 @@
   "pk": 3,
   "fields": {
     "project": 1,
-    "description": "Task45w",
-    "maxdescription": "wwwwwwwwwwwwwwwwwwwwwwww",
+    "description": "Task11",
+    "maxdescription": "deddddddddddddddddddddddddd",
+    "status": 3,
+    "publish_at": "2020-09-01T09:21:09Z",
+    "updated_at": "2020-09-15T09:21:09Z",
+    "types": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 4,
+  "fields": {
+    "project": 1,
+    "description": "Task454",
+    "maxdescription": "swdertgyuiop",
     "status": 2,
-    "publish_at": "2020-09-13T10:25:25Z",
-    "updated_at": "2020-09-13T10:25:25Z",
+    "publish_at": "2020-09-15T09:21:24Z",
+    "updated_at": "2020-09-15T09:21:24Z",
     "types": [
       1
     ]
@@ -55,14 +70,14 @@
   "model": "webapp.type",
   "pk": 2,
   "fields": {
-    "name": "Bug"
+    "name": "Enhancement"
   }
 },
 {
   "model": "webapp.type",
   "pk": 3,
   "fields": {
-    "name": "Enhancement"
+    "name": "Bug"
   }
 },
 {
@@ -81,43 +96,43 @@
 },
 {
   "model": "webapp.status",
-  "pk": 4,
+  "pk": 3,
   "fields": {
     "name": "Done"
   }
 },
 {
   "model": "auth.user",
-  "pk": 1,
+  "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$150000$ghGtfquRpYjF$MbROeyhV+9Te7DrP1TTXsAwkoPF0KPUDK7Ty+kC94vg=",
-    "last_login": "2020-09-13T11:15:05.137Z",
+    "password": "pbkdf2_sha256$150000$lMRqxRx7yZRL$1Uzfx8B+unbga/O3Sq1sLWq0jUeYU9D1CndJN/eto+E=",
+    "last_login": "2020-09-15T09:25:48.981Z",
     "is_superuser": true,
-    "username": "DaryaN",
-    "first_name": "",
-    "last_name": "",
-    "email": "d@mail.ru",
+    "username": "Admin",
+    "first_name": "Darya",
+    "last_name": "Novoselova",
+    "email": "dasha_novoselova98@mail.ru",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-09-13T10:23:03.631Z",
+    "date_joined": "2020-09-15T09:25:08Z",
     "groups": [],
     "user_permissions": []
   }
 },
 {
   "model": "auth.user",
-  "pk": 2,
+  "pk": 3,
   "fields": {
-    "password": "pbkdf2_sha256$150000$QvvYXUvtb2D3$1L6nqd8IzeIgvKTItwcMVlomhiDU2WgI+tS2YgKhpYQ=",
-    "last_login": "2020-09-13T10:51:39.147Z",
+    "password": "pbkdf2_sha256$150000$dlbXATeaIT3q$QIxlfNUnPHphe8jy9RNqyLT/NEzwB8fTUgyxelhSO7g=",
+    "last_login": null,
     "is_superuser": false,
     "username": "manager",
-    "first_name": "Alex",
+    "first_name": "Sergei",
     "last_name": "Sergeev",
-    "email": "alex@mail.ru",
+    "email": "niktomsan@mail.ru",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-09-13T10:30:29Z",
+    "date_joined": "2020-09-15T09:26:33Z",
     "groups": [
       1
     ],
@@ -126,18 +141,18 @@
 },
 {
   "model": "auth.user",
-  "pk": 3,
+  "pk": 4,
   "fields": {
-    "password": "pbkdf2_sha256$150000$Z8sliI9VNIC3$4cPpUDJmudiU1HQODfqwaiTHGNt3m7+RKw0gmIonWWw=",
-    "last_login": "2020-09-13T11:14:11.830Z",
+    "password": "pbkdf2_sha256$150000$PwEA0Mk8pTAT$Aq6pvVtqzTHh+lFPvFbE7jNxg6ygs5eE1H5csk20hz8=",
+    "last_login": "2020-09-15T09:34:17.376Z",
     "is_superuser": false,
     "username": "lead",
-    "first_name": "Alice",
+    "first_name": "Alex",
     "last_name": "Srr",
-    "email": "sr@mail.ru",
+    "email": "email@mail.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2020-09-13T10:31:40Z",
+    "date_joined": "2020-09-15T09:27:28Z",
     "groups": [
       2
     ],
@@ -146,18 +161,18 @@
 },
 {
   "model": "auth.user",
-  "pk": 4,
+  "pk": 5,
   "fields": {
-    "password": "pbkdf2_sha256$150000$mKg9s4QeFAtS$7/uwFTRbJzUiYQ5MKCif7u0wzh3cWgVvRMe/eWtlfx8=",
-    "last_login": "2020-09-13T11:15:48.936Z",
+    "password": "pbkdf2_sha256$150000$klxSeegu7lnH$ouLD0zGx+oo0SH6vmMYsHj8YmxevBpMDGgWkyUFV4Bg=",
+    "last_login": "2020-09-15T09:34:47.876Z",
     "is_superuser": false,
-    "username": "dev",
-    "first_name": "Lev",
-    "last_name": "gggo",
-    "email": "lev@mail.ru",
+    "username": "developer",
+    "first_name": "Alice",
+    "last_name": "Srroi",
+    "email": "darkeroman@gmail.com",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2020-09-13T10:32:46Z",
+    "date_joined": "2020-09-15T09:28:25Z",
     "groups": [
       3
     ],
@@ -169,22 +184,9 @@
   "pk": 1,
   "fields": {
     "name": "project",
-    "text": "blablablBLDDLLDL",
-    "newdate_at": "2020-09-13",
+    "text": "asdfgthyju",
+    "newdate_at": "2020-09-01",
     "enddate_at": "2020-09-17",
-    "users": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.project",
-  "pk": 2,
-  "fields": {
-    "name": "project55",
-    "text": "sdwfergthyu",
-    "newdate_at": "2020-08-24",
-    "enddate_at": "2020-09-23",
     "users": []
   }
 }
